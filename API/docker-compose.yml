@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  db:
+    image: mysql:latest
+    container_name: service-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Password1'
+    ports:
+      - '3307:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-datavolume:/var/lib/mysql
+volumes:
+  my-datavolume:
